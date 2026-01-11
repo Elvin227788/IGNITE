@@ -1,9 +1,13 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export const analyzeDocument = async (data) => {
-  const response = await axios.post(`${API_BASE}/analyze`, data);
+  const response = await axios.post(`${API_BASE}/analyze`, data, {
+    headers: {
+      'Content-Type': data instanceof FormData ? 'multipart/form-data' : 'application/json'
+    }
+  });
   return response.data;
 };
 

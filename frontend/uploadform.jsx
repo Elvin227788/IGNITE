@@ -7,13 +7,24 @@ function UploadForm({ setAnalysis, setDocumentText }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    if (file) formData.append('file', file);
-    else formData.append('text', text);
     
-    const result = await analyzeDocument(formData);
+    let result;
+    if (file) {
+      // Send as multipart/form-data for file upload
+      const formData = new FormData();
+      formData.append('file', file);
+      result = await analyzeDocument(formData);
+      setDocumentText('');  // File text will be extracted by backend
+    } else if (text) {
+      // Send as JSON for text input
+      result = await analyzeDocument({ text });
+      setDocumentText(text);
+    } else {
+      alert('Please provide text or upload a file');
+      return;
+    }
+    
     setAnalysis(result);
-    setDocumentText(text || '');  // For chat
   };
 
   return (

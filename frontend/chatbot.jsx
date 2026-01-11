@@ -6,6 +6,14 @@ function Chatbot({ documentText }) {
   const [answer, setAnswer] = useState('');
 
   const handleAsk = async () => {
+    if (!documentText) {
+      setAnswer('Please analyze a text document first (file uploads cannot be used for chat yet).');
+      return;
+    }
+    if (!question.trim()) {
+      setAnswer('Please enter a question.');
+      return;
+    }
     const result = await chatWithDocument(question, documentText);
     setAnswer(result.answer);
   };

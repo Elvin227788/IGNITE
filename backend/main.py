@@ -14,6 +14,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 async def analyze_document(request: AnalyzeRequest = None, file: UploadFile = File(None)):
     text = ""
     if file:
+        os.makedirs("uploads", exist_ok=True)
         file_path = f"uploads/{file.filename}"
         with open(file_path, "wb") as f:
             f.write(await file.read())
