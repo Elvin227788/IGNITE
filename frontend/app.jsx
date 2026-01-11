@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import UploadForm from './components/UploadForm';
-import Results from './components/Results';
-import Chatbot from './components/Chatbot';
+import UploadForm from './uploadform';
+import Results from './result';
+import Chatbot from './chatbot';
 
 function App() {
   const [analysis, setAnalysis] = useState(null);

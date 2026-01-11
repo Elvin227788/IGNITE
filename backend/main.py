@@ -1,6 +1,7 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import os
+import json
 from database import SessionLocal, Analysis
 from models import AnalyzeRequest, AnalysisResponse, ChatRequest
 from ai_processor import process_document, answer_question

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { analyzeDocument } from '../api';
+import { analyzeDocument } from './api';
 
 function UploadForm({ setAnalysis, setDocumentText }) {
   const [text, setText] = useState('');

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { chatWithDocument } from '../api';
+import { chatWithDocument } from './api';
 
 function Chatbot({ documentText }) {
   const [question, setQuestion] = useState('');
