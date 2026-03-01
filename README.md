@@ -1,5 +1,5 @@
-# IGNITE - Legalese Translator
-REPO OF 404 FOUND TEAM FOR IGNITE HACKATHON
+# AMD HACKATHON - Legalese Translator
+REPO OF 404 FOUND TEAM FOR AMD HACKATHON
 
 ## Overview
 A web application that translates complex legal documents into plain English, identifies red flags, and provides an AI chatbot for questions.
@@ -72,4 +72,5 @@ A web application that translates complex legal documents into plain English, id
 5. Ask questions using the chatbot
 
 ## Team
-404 FOUND - IGNITE Hackathon
+404 FOUND - AMD 
+Hackathon
